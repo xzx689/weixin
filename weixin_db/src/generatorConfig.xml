@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <classPathEntry location="ojdbc14-10.2.0.4.0.jar"/>
+    <context id="MySqlTables" targetRuntime="com.zyt.mybatis.plugin.MyIntrospectedTableMyBatis3Impl">
+        <!-- Pagination -->
+        <plugin type="com.zyt.mybatis.plugin.OraclePaginationPlugin"/>
+        <!-- 关闭注解信息 -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+                        connectionURL="jdbc:oracle:thin:@192.168.4.95:1521:orcl"
+                        userId="WXSHOP" password="WXSHOP">
+        </jdbcConnection>
+        <javaTypeResolver type="com.zyt.mybatis.plugin.MyJavaTypeResolver">
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!-- model的配置 -->
+        <javaModelGenerator targetPackage="ihandy.youhuo.serverdb.model" targetProject="./src/main/java">
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!-- mybatis的xml的配置 -->
+        <sqlMapGenerator targetPackage="mapper.oracle" targetProject="./src/main/resources">
+        </sqlMapGenerator>
+        <!-- mapper的配置 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="ihandy.youhuo.serverdb.dao"
+                             targetProject="./src/main/java">
+        </javaClientGenerator>
+        <table tableName="TL_ADR_TYPE">
+            <generatedKey column="NUMADRTYPEID" sqlStatement="select SEQ_ADR_TYPE.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_AD">
+            <generatedKey column="NUMADCID" sqlStatement="select SEQ_AD.nextval from dual" type="pre"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_AD_TYPE">
+            <generatedKey column="NUMADTYPEID" sqlStatement="select SEQ_AD_TYPE.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_USER">
+            <generatedKey column="NUMUSER_ID" sqlStatement="select SEQ_USER.nextval from dual" type="pre"/>
+            <columnOverride column="DATUSER_CREATETIME" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATELASTLOGIN" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_PAYTYPE">
+            <generatedKey column="NUMPAYTYPEID" sqlStatement="select SEQ_PAYTYPE.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_ACTIVITY_LIMITTIME">
+            <generatedKey column="NUMLTID" sqlStatement="select SEQ_ACTIVITY_LIMITTIME.nextval from dual" type="pre"/>
+            <columnOverride column="DATSTART" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATEND" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_PRODUCT_PIC">
+            <generatedKey column="NUMPICSEQID" sqlStatement="select SEQ_PRODUCT_PIC.nextval from dual" type="pre"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_ROLE">
+            <generatedKey column="NUMROLE_ID" sqlStatement="select SEQ_ROLE.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_ROLE_MODULE">
+            <generatedKey column="NUMID" sqlStatement="select SEQ_ROLE_MODULE.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_SERVICE_LOGISTICS">
+            <generatedKey column="NUMSLID" sqlStatement="select SEQ_SERVICE_LOGISTICS.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_SL_PRICE">
+            <generatedKey column="NUMSLID" sqlStatement="select SEQ_SL_PRICE.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_USERTYPE">
+            <generatedKey column="NUMUSERTYPE" sqlStatement="select SEQ_USERTYPE.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_USER_ROLE">
+            <generatedKey column="NUMID" sqlStatement="select SEQ_USER_ROLE.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_SUPPLIER">
+            <generatedKey column="NUMSUPPLIERID" sqlStatement="select SEQ_SUPPLIER.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_PRODUCT_CITY">
+            <generatedKey column="NUMPCID" sqlStatement="select SEQ_PRODUCT_CITY.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_CITY">
+            <generatedKey column="NUMCITYID" sqlStatement="select SEQ_CITY.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_MODULE">
+            <generatedKey column="NUMMODULE_ID" sqlStatement="select SEQ_MODULE.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_PRODUCTTYPE">
+            <generatedKey column="NUMPRODUCTTYPEID" sqlStatement="select SEQ_PRODUCTTYPE.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_PRODUCT_REVIEW">
+            <generatedKey column="NUMPRID" sqlStatement="select SEQ_PRODUCT_REVIEW.nextval from dual" type="pre"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_PRODUCT_INFO">
+            <generatedKey column="ID" sqlStatement="select SEQ_PRODUCT_INFO.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_PUBLISH_COUPON">
+            <generatedKey column="NUMSEQID" sqlStatement="select SEQ_PUBLISH_COUPON.nextval from dual" type="pre"/>
+            <columnOverride column="DATUSE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_PRODUCTSTOCK_LOG">
+            <generatedKey column="NUMPSLOGID" sqlStatement="select SEQ_PRODUCTSTOCK_LOG.nextval from dual" type="pre"/>
+            <columnOverride column="DATIN" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATPRODUCE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATEND" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_PROD_MORE_TYPE">
+            <generatedKey column="NUMPMDID" sqlStatement="select SEQ_PROD_MORE_TYPE.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_WX_REGULATION">
+            <generatedKey column="NUMREGULATIONID" sqlStatement="select SEQ_WX_REGULATION.nextval from dual" type="pre"/>
+            <columnOverride column="DATCREATETIME" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_WX_MENU">
+            <generatedKey column="WEIXIN_MENU_ID" sqlStatement="select SEQ_WX_MENU.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_FEEDBACK">
+            <generatedKey column="NUMFEEDID" sqlStatement="select SEQ_FEEDBACK.nextval from dual" type="pre"/>
+            <columnOverride column="DATFEED" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATREPLY" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_USER_WORKTIME">
+            <generatedKey column="NUMUWID" sqlStatement="select SEQ_USER_WORKTIME.nextval from dual" type="pre"/>
+            <columnOverride column="DATSTART" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATEND" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_USER_REVIEW">
+            <generatedKey column="NUMURID" sqlStatement="select SEQ_USER_REVIEW.nextval from dual" type="pre"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_RESERVE_LOG">
+            <generatedKey column="NUMRLOGID" sqlStatement="select SEQ_RESERVE_LOG.nextval from dual" type="pre"/>
+            <columnOverride column="DATR" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_ORDER">
+            <generatedKey column="VC2ORDERID" sqlStatement="select SEQ_ORDER.nextval from dual" type="pre"/>
+            <columnOverride column="DATORDER" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATSEND" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATVIPHOPE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATVIPTAKE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATFILING" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATCONFIRM" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATDELIVERY" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_AC_GROUP">
+            <generatedKey column="NUMGROUPID" sqlStatement="select SEQ_AC_GROUP.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_ACTIVITY_TYPE">
+            <generatedKey column="NUMTYPE" sqlStatement="select SEQ_ACTIVITY_TYPE.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_COUPON">
+            <generatedKey column="NUMCOUPONID" sqlStatement="select SEQ_COUPON.nextval from dual" type="pre"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATSTART" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATEND" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_ORDERLIST">
+            <generatedKey column="NUMORDERDETAILID" sqlStatement="select SEQ_ORDERLIST.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_WX_RESOURCE">
+            <generatedKey column="NUMRESOURCE_ID" sqlStatement="select SEQ_WX_RESOURCE.nextval from dual" type="pre"/>
+            <columnOverride column="DAT_CREATETIME" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_ATSALE_EXCHANGE">
+            <generatedKey column="NUMASEID" sqlStatement="select SEQ_ATSALE_EXCHANGE.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_PRODUCTSTOCK">
+            <generatedKey column="NUMPSPECID" sqlStatement="select SEQ_PRODUCTSTOCK.nextval from dual" type="pre"/>
+            <columnOverride column="DATCREATE2" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATAOG" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_WX_GROUP">
+            <generatedKey column="NUM_TL_GROUP_ID" sqlStatement="select SEQ_WX_GROUP.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_WX_USER">
+            <generatedKey column="NUM_WXUSERID" sqlStatement="select SEQ_WX_USER.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_VIP">
+            <generatedKey column="NUMVIPID" sqlStatement="select SEQ_VIP.nextval from dual" type="pre"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_WEB_AD">
+            <generatedKey column="NUMADID" sqlStatement="select SEQ_WEB_AD.nextval from dual" type="pre"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_PRODUCT">
+            <generatedKey column="NUMPRODUCTID" sqlStatement="select SEQ_PRODUCT.nextval from dual" type="pre"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATGROUNDING" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_ACTIVITY">
+            <generatedKey column="NUMACTIVITYID" sqlStatement="select SEQ_ACTIVITY.nextval from dual" type="pre"/>
+            <columnOverride column="DATSTART" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATEND" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATSEND" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_LOG_KEYWORD">
+            <generatedKey column="NUMLOGKWID" sqlStatement="select SEQ_LOG_KEYWORD.nextval from dual" type="pre"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_ACTIVITY_FREE">
+            <generatedKey column="NUMAFID" sqlStatement="select SEQ_ACTIVITY_FREE.nextval from dual" type="pre"/>
+            <columnOverride column="DATSTART" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATEND" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATSEND" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_VIP_ADDRESS">
+            <generatedKey column="NUMADDRESSID" sqlStatement="select SEQ_VIP_ADDRESS.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_CITY_COMM">
+            <generatedKey column="NUMCOMMID" sqlStatement="select SEQ_CITY_COMM.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_ATSALESERV">
+            <generatedKey column="NUMASSID" sqlStatement="select SEQ_ATSALESERV.nextval from dual" type="pre"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATASS" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_ATSALESERV_LOG">
+            <generatedKey column="NUMASSLOGID" sqlStatement="select SEQ_ATSALESERV_LOG.nextval from dual" type="pre"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_FOCUS_PRODUCT">
+            <generatedKey column="NUMFPID" sqlStatement="select SEQ_FOCUS_PRODUCT.nextval from dual" type="pre"/>
+            <columnOverride column="DATFP" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_WEB_SMS">
+            <generatedKey column="NUMMSSEQID" sqlStatement="select SEQ_WEB_SMS.nextval from dual" type="pre"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATREAD" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_MS_POST">
+            <generatedKey column="NUMMSID" sqlStatement="select SEQ_MS_POST.nextval from dual" type="pre"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATSEND" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_PRODUCT_REVI_FB">
+            <generatedKey column="NUMPRFBID" sqlStatement="select SEQ_PRODUCT_REVI_FB.nextval from dual" type="pre"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_AC_RULE">
+            <generatedKey column="NUMACRID" sqlStatement="select SEQ_AC_RULE.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_ACTIVITY_CROWDFUNDING">
+            <generatedKey column="NUMACID" sqlStatement="select SEQ_ACTIVITY_CROWDFUNDING.nextval from dual" type="pre"/>
+            <columnOverride column="DATSTART" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATEND" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATSEND" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_AC_GROUPMEMBER">
+            <generatedKey column="NUMGMID" sqlStatement="select SEQ_AC_GROUPMEMBER.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_STAT_KEYWORD">
+            <generatedKey column="NUMSTATKWID" sqlStatement="select SEQ_STAT_KEYWORD.nextval from dual" type="pre"/>
+            <columnOverride column="DATSTAT" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_USER_COMM">
+            <generatedKey column="NUMUSERCOMMID" sqlStatement="select SEQ_USER_COMM.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_RESERVE_TIME">
+            <generatedKey column="NUMRTID" sqlStatement="select SEQ_RESERVE_TIME.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_CITY_AREA">
+            <generatedKey column="NUMAREAID" sqlStatement="select SEQ_CITY_AREA.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_WX_MO_LOG">
+            <generatedKey column="NUMMOLOG" sqlStatement="select SEQ_WX_MO_LOG.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_AD_ACTIVITY">
+            <generatedKey column="NUMADAID" sqlStatement="select SEQ_AD_ACTIVITY.nextval from dual" type="pre"/>
+            <columnOverride column="DATSTART" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATEND" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_CITY_AREA_COMM">
+            <generatedKey column="NUMACSEQID" sqlStatement="select SEQ_CITY_AREA_COMM.nextval from dual" type="pre"/>
+        </table>
+        <table tableName="TL_WX_MT_LOG">
+            <generatedKey column="NUMMTLOGID" sqlStatement="select SEQ_WX_MT_LOG.nextval from dual" type="pre"/>
+            <columnOverride column="DATSENDTIME" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATREPORTTIME" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_WX_LOGIN_LOG">
+            <generatedKey column="NUMLOGID" sqlStatement="select SEQ_WX_LOGIN_LOG.nextval from dual" type="pre"/>
+            <columnOverride column="DATCREATETIME" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_ORDER_LOGISTICS">
+            <generatedKey column="NUMSEQID" sqlStatement="select SEQ_ORDER_LOGISTICS.nextval from dual" type="pre"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_STAT_VIP_CON">
+            <generatedKey column="NUMSTATVIPID" sqlStatement="select SEQ_STAT_VIP_CON.nextval from dual" type="pre"/>
+            <columnOverride column="DATSTAT" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="TL_COUPON_APP">
+            <generatedKey column="NUMCOUPONAPPID" sqlStatement="select SEQ_COUPON_APP.nextval from dual" type="pre"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+        <table tableName="VTL_PRODUCT_PRODUCTSTOCK">
+            <columnOverride column="DATCREATE2" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <columnOverride column="DATCREATE" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </table>
+    </context>
+</generatorConfiguration>

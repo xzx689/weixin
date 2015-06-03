@@ -1,0 +1,7 @@
+0、父项目    weixin_parent
+1、管理平台  weixin_platform  
+2、手机网站  weixin_appweb
+3、db	     weixin_db
+4、微信接口  weixin_interface
+5、工具类    weixin_tools
+
